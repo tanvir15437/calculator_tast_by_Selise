@@ -1,0 +1,82 @@
+:root {
+  --bg: #e0e0e0;
+  --calculator-bg: rgba(255, 255, 255, 0.25);
+  --button-bg: rgba(255, 255, 255, 0.3);
+  --btn-shadow: rgba(0, 0, 0, 0.15);
+  --text-color: #222;
+  --accent: #4caf50;
+  --equal-bg: #2196f3;
+  --operator-bg: #f9a825;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #c3cfe2, #cfd9df);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.calculator {
+  background: var(--calculator-bg);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px var(--btn-shadow);
+  padding: 1rem;
+  width: 300px;
+}
+
+.display {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  font-size: 2.4rem;
+  text-align: right;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  min-height: 60px;
+  overflow-x: auto;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+}
+
+.btn {
+  font-size: 1.4rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--button-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.3s ease;
+  box-shadow: 0 4px 6px var(--btn-shadow);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.operator {
+  background: var(--operator-bg);
+  color: white;
+}
+
+.equal {
+  background: var(--equal-bg);
+  color: white;
+  grid-row: span 2;
+}
+
+.zero {
+  grid-column: span 2;
+}
