@@ -25,7 +25,7 @@ function calculateResult() {
   try {
     const result = eval(expression);
     expression = parseFloat(result.toFixed(10)).toString();
-  } catch (err) {
+  } catch {
     expression = 'Error';
   }
   updateDisplay();
@@ -51,7 +51,7 @@ document.querySelectorAll('.btn').forEach((btn) => {
 window.addEventListener('keydown', (e) => {
   const key = e.key;
 
-  if (/[0-9+\-*/.]/.test(key)) {
+  if (/[0-9+\-*/.%]/.test(key)) {
     appendValue(key);
   } else if (key === 'Enter') {
     e.preventDefault();
